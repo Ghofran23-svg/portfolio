@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patisserie delice</title>
+  <link rel="stylesheet" href="stylepa.css">
+
+  <!-- icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>html{
+  scroll-behavior:smooth;
+}</style>
+</head>
+
+<body>
+
+<!-- LEFT SIDEBAR ICONS -->
+<div class="sidebar">
+
+  <a href="#hero">
+    <i class="fa fa-home"></i>
+    <span>Accueil</span>
+  </a>
+
+  <a href="#about">
+    <i class="fa fa-info-circle"></i>
+    <span>À propos</span>
+  </a>
+
+  <a href="#products">
+    <i class="fa fa-cookie-bite"></i>
+    <span>Produits</span>
+  </a>
+
+  <a href="#contact">
+    <i class="fa fa-phone"></i>
+    <span>Contact</span>
+  </a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+
+  <!-- center content -->
+  <div class="center">
+<img src="Délice.png" alt="Patisserie Logo" class="logo">
+    <h1>PÂTISSERIE</h1>
+    <h2>Délice</h2>
+    <p>DEPUIS 2005</p>
+
+<a href="#about" class="arrow">
+  <i class="fa fa-arrow-down"></i>
+</a>
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+      <div class="about-box">
+    <h2>À propos</h2>
+    <p>
+      Depuis 2005, la Pâtisserie Delice incarne le savoir-faire artisanal et la tradition.
+      Nos produits sont préparés avec amour et passion pour offrir une expérience authentique.
+    </p>
+  </div>
+</section>
+
+<section class="products-section" id="products">
+  <h2>Nos Produits</h2>
+
+  <div class="products-container">
+
+    <!-- Baklawa -->
+    <div class="product-card">
+      <img src="bakalawa.PNG" alt="">
+      <h3>Baklawa</h3>
+      <p class="price">Par pièce</p>
+    </div>
+
+    <!-- Kaak -->
+    <div class="product-card">
+      <img src="kaak.PNG" alt="">
+      <h3>Kaak Warka</h3>
+      <p class="price">Par pièce</p>
+    </div>
+
+
+    <div class="product-card">
+      <img src="lib.PNG" alt="">
+      <h3>Libanais Noisettes</h3>
+      <p class="price">Par pièce</p>
+    </div>
+
+
+    <div class="product-card">
+      <img src="mig.PNG" alt="">
+      <h3>Mignardise Bouquet Noisette</h3>
+      <p class="price">Par pièce</p>
+    </div>
+
+
+
+
+    <div class="product-card">
+      <img src="dag.PNG" alt="">
+      <h3>Dattes Noisette Pistache</h3>
+      <p class="price">Par pièce</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Contact</h2>
+
+  <p>📍 20 Avenue Charles Nicolle, 1000 Tunis</p>
+  <p>📧 contact@patisseriedelice.tn</p>
+  <p>📞 +216 27 27 22 72</p>
+
+  <button class="review-btn" onclick="openForm()">
+    ⭐ Laisser un avis
+  </button>
+
+</section>
+
+<!-- FEEDBACK POPUP -->
+<div class="overlay" id="overlay">
+  <div class="feedback-box">
+
+    <h3>💬 Feedback</h3>
+
+<div class="emojis">
+  <span onclick="selectEmoji(this)">😍</span>
+  <span onclick="selectEmoji(this)">😊</span>
+  <span onclick="selectEmoji(this)">😐</span>
+  <span onclick="selectEmoji(this)">😕</span>
+  <span onclick="selectEmoji(this)">😡</span>
+</div>
+
+    <textarea placeholder="Write your review..."></textarea>
+
+    <div class="buttons">
+<button class="send" onclick="sendReview()">Send</button>
+      <button class="cancel" onclick="closeForm()">Cancel</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+    
+ <footer class="footer">
+
+  <p>© 2026 Pâtisserie Délice</p>
+
+  <div class="social-icons">
+
+    <a href="https://facebook.com" target="_blank" class="circle fb">F</a>
+
+    <a href="https://instagram.com" target="_blank" class="circle ig">I</a>
+
+    <a href="https://wa.me/21627272272" target="_blank" class="circle wa">W</a>
+
+  </div>
+
+</footer>  
+
+
+    
+
+
+
+<script>
+function openForm(){
+  document.getElementById("overlay").style.display = "flex";
+}
+
+function closeForm(){
+  document.getElementById("overlay").style.display = "none";
+}
+function sendReview(){
+  alert("Merci pour votre avis ❤️");
+  closeForm(); // يسكر الفورم بعد الإرسال
+}
+
+let selectedEmoji = "";
+
+function selectEmoji(el){
+
+  // نحيد active من الكل
+  document.querySelectorAll(".emojis span").forEach(e => {
+    e.classList.remove("active");
+  });
+
+  // نخلي كان المختار
+  el.classList.add("active");
+
+  selectedEmoji = el.innerText;
+}
+
+
+</script>
+</body>
+</html>
